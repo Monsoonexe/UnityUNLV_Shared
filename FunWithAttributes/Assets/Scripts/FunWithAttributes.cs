@@ -10,6 +10,9 @@
 [RequireComponent(typeof(BoxCollider))]//if this Component does not exist, add it 
 public class FunWithAttributes : MonoBehaviour
 {
+    //regions make code collapsable in Visual Studio!
+    #region Variables 
+
     [Header("<--SerializeField Example-->")]//bold text in Inspector
 
     private string string_00 = "Private string_00";
@@ -83,6 +86,9 @@ public class FunWithAttributes : MonoBehaviour
     [Header("Custom Struct (hidden unless marked serializeable)")]//invisible unless the Struct is marked with attribute!
     public RichsStruct[] serializedListOfStructs;//This won't show up in the Inspector unless RichsStruct is marked [System.Serializeable]! 
 
+    #endregion
+
+    #region Functions
     //Awake is called while the game boots up, or as soon as it is created. Awake is called before Start()
     void Awake()
     {
@@ -138,4 +144,6 @@ public class FunWithAttributes : MonoBehaviour
         Debug.LogWarning("I'm a Warning! Move along now, but don't get comfortable!");
         Debug.LogError("I'M AN ERROR! WTF, dude? Pay more attention! I'm the poor man's exception handler!");
     }
+
+    #endregion
 }
